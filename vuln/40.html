@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/low"><span class="label label-info">low</span></a>
+        
+    </div>
+</div>
+
+<h2>Private IP address disclosure <small>#40</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Private, or non-routable, IP addresses are generally used within a home or company network and are typically unknown to anyone outside of that network.</p>
+
+<p>Cyber-criminals will attempt to identify the private IP address range being used by their victim, to aid in collecting further information that could then lead to a possible compromise.</p>
+
+<p>The tool discovered that the affected page returned a RFC 1918 compliant private IP address and therefore could be revealing sensitive information.</p>
+
+<p>_This finding typically requires manual verification to ensure the context is correct, as any private IP address within the HTML body will trigger it.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Identifying the context in which the affected page displays a Private IP address is necessary.</p>
+
+<p>If the page is publicly accessible and displays the Private IP of the affected server (or supporting infrastructure), then measures should be put in place to ensure that the IP address is removed from any response.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://projects.webappsec.org/w/page/13246936/Information%20Leakage">WebAppSec</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

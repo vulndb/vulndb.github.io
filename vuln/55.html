@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/high"><span class="label label-danger">high</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/xss"><span class="label label-primary">xss</span></a>
+
+        
+        <a href="/tag/injection"><span class="label label-primary">injection</span></a>
+
+        
+        <a href="/tag/script"><span class="label label-primary">script</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Reflected Cross-Site Scripting (XSS) <small>#55</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Client-side scripts are used extensively by modern web applications. They perform from simple functions (such as the formatting of text) up to full manipulation of client-side data and Operating System interaction.</p>
+
+<p>Cross Site Scripting (XSS) allows clients to inject arbitrary scripting code into a request and have the server return the script to the client in the response. This occurs because the application is taking untrusted data (in this example, from the client) and reusing it without performing any validation or encoding.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(10 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>To remedy XSS vulnerabilities, it is important to never use untrusted or unfiltered data within the code of a HTML page.</p>
+
+<p>Untrusted data can originate not only form the client but potentially a third party or previously uploaded file etc. Filtering of untrusted data typically involves converting special characters to their HTML entity encoded counterparts (however, other methods do exist, see references). These special characters include:</p>
+
+<ul>
+<li><code>&amp;</code></li>
+<li><code>&lt;</code></li>
+<li><code>&gt;</code></li>
+<li><code>&quot;</code></li>
+<li><code>'</code></li>
+<li><code>/</code></li>
+</ul>
+
+<p>An example of HTML entity encoding is converting <code>&lt;</code> to <code>&amp;lt;</code>. Although it is possible to filter untrusted input, there are five locations within an HTML page where untrusted input (even if it has been filtered) should never be placed:</p>
+
+<ol>
+<li>Directly in a script.</li>
+<li>Inside an HTML comment.</li>
+<li>In an attribute name.</li>
+<li>In a tag name.</li>
+<li>Directly in CSS.</li>
+</ol>
+
+<p>Each of these locations have their own form of escaping and filtering.</p>
+
+<p><em>Because many browsers attempt to implement XSS protection, any manual verification of this finding should be conducted using multiple different browsers and browser versions.</em></p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://secunia.com/advisories/9716/">Secunia</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://ha.ckers.org/xss.html">ha.ckers</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

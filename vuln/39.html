@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/high"><span class="label label-danger">high</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/path"><span class="label label-primary">path</span></a>
+
+        
+        <a href="/tag/traversal"><span class="label label-primary">traversal</span></a>
+
+        
+        <a href="/tag/injection"><span class="label label-primary">injection</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Path Traversal <small>#39</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Web applications occasionally use parameter values to store the location of a file which will later be required by the server.</p>
+
+<p>An example of this is often seen in error pages, where the actual file path for the error page is stored in a parameter value &ndash; for example <code>example.com/error.php?page=404.php</code>.</p>
+
+<p>A path traversal occurs when the parameter value (ie. path to file being called by the server) can be substituted with the relative path of another resource which is located outside of the applications working directory. The server then loads the resource and includes its contents in the response to the client.</p>
+
+<p>Cyber-criminals will abuse this vulnerability to view files that should otherwise not be accessible.</p>
+
+<p>A very common example of this, on *nix servers, is gaining access to the <code>/etc/passwd</code> file in order to retrieve a list of server users. This attack would look like: <code>yoursite.com/error.php?page=../../../../etc/passwd</code></p>
+
+<p>As path traversal is based on the relative path, the payload must first traverse to the file system&rsquo;s root directory, hence the string of <code>../../../../</code>.</p>
+
+<p>The tool discovered that it was possible to substitute a parameter value with a relative path to a common operating system file and have the contents of the file included in the response.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>It is recommended that untrusted data is never used to form a file location to be included.</p>
+
+<p>To validate data, the application should ensure that the supplied value for a file is permitted. This can be achieved by performing whitelisting on the parameter value, by matching it against a list of permitted files. If the supplied value does not match any value in the whitelist, then the server should redirect to a standard error page.</p>
+
+<p>In some scenarios, where dynamic content is being requested, it may not be possible to perform validation against a list of trusted resources, therefore the list must also become dynamic (updated as the files change), or perform filtering to remove extraneous user input (such as semicolons, periods etc.) and only permit <code>a-z0-9</code>.</p>
+
+<p>It is also advised that sensitive files are not stored within the web root and that the user permissions enforced by the directory are correct.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://projects.webappsec.org/Path-Traversal">WASC</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/Path_Traversal">OWASP</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

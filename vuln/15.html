@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/low"><span class="label label-info">low</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/path"><span class="label label-primary">path</span></a>
+
+        
+        <a href="/tag/directory"><span class="label label-primary">directory</span></a>
+
+        
+        <a href="/tag/listing"><span class="label label-primary">listing</span></a>
+
+        
+        <a href="/tag/index"><span class="label label-primary">index</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Directory listing <small>#15</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Web servers permitting directory listing are typically used for sharing files.</p>
+
+<p>Directory listing allows the client to view a simple list of all the files and folders hosted on the web server. The client is then able to traverse each directory and download the files. Cyber-criminals will utilise the presence of directory listing to discover sensitive files, download protected content, or even just learn how the web application is structured.</p>
+
+<p>The tool discovered that the affected page permits directory listing.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Unless the web server is being utilised to share static and non-sensitive files, enabling directory listing is considered a poor security practice</p>
+
+<p>This can typically be done with a simple configuration change on the server. The steps to disable the directory listing will differ depending on the type of server being used (IIS, Apache, etc.). If directory listing is required, and permitted, then steps should be taken to ensure that the risk of such a configuration is reduced.</p>
+
+<p>These can include:
+ 1. Requiring authentication to access affected pages.
+ 2. Adding the affected path to the <code>robots.txt</code> file to prevent the directory contents being searchable via search engines.
+ 3. Ensuring that sensitive files are not stored within the web or document root.
+ 4. Removing any files that are not required for the application to function.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://projects.webappsec.org/w/page/13246922/Directory%20Indexing">WASC</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://cwe.mitre.org/data/definitions/548.html">CWE-548</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

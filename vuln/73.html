@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/low"><span class="label label-info">low</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/error"><span class="label label-primary">error</span></a>
+
+        
+        <a href="/tag/information%20leak"><span class="label label-primary">information leak</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Application error message <small>#73</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Information Leakage is an application weakness where an application reveals sensitive data, such as technical details of the web application, environment, or user-specific data. Sensitive data may be used by an attacker to exploit the target web application, its hosting network, or its users.</p>
+
+<p>In its most common form, information leakage is the result of one or more of the following conditions:
+ * A failure to scrub out HTML/Script comments containing sensitive information
+ * Improper application or server configurations
+ * Improper application error handling</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(60 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><ul>
+<li>Ensure that the application source handles exceptions and errors in a such a way that no sensitive information is disclosed to the users</li>
+<li>Configure the application server to handle and log any exceptions that the application might yield</li>
+</ul>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://cwe.mitre.org/data/definitions/200.html">CWE-200</a> </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://projects.webappsec.org/w/page/13246936/Information%20Leakage">WASC threat classification</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

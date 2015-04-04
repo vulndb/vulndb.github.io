@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/medium"><span class="label label-warning">medium</span></a>
+        
+    </div>
+</div>
+
+<h2>Access-Control-Allow-Origin header set to &#39;*&#39; <small>#26</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Cross-Origin Resource Sharing (CORS) is one of the new HTML5 technologies which is widely implemented to create Web2.0 applications. CORS allows the browser to perform HTTP requests to a domain outside the Same-Origin Policy and access the response body. This feature is secured by a new set of HTTP headers, being <code>Access-Control-Allow-Origin</code> one of the most important ones.</p>
+
+<p>It was possible to identify an HTTP response which contained the <code>Access-Control-Allow-Origin</code> header value set to &lsquo;*&lsquo;, which allows any third-party domain to perform requests and read the responses. While this configuration is not a vulnerability per-se, it&rsquo;s only recommended for sites which provide information that&rsquo;s public such as weather or stock prices.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>All CORS requests include the <code>Origin</code> header which indicates the source domain name. Create a server-side list of trusted domains which can consume the CORS resources and when a request is received set the <code>Access-Control-Allow-Origin</code> response header to the right value from the list matching the <code>Origin</code> request header.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/CORS_OriginHeaderScrutiny">CORS security</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://www.w3.org/TR/cors/">CORS W3C Specification</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS article at Wikipedia</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

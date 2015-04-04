@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/medium"><span class="label label-warning">medium</span></a>
+        
+    </div>
+</div>
+
+<h2>Credit card number disclosure <small>#12</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Credit card numbers are used in applications where a user is able to purchase goods and/or services.</p>
+
+<p>A credit card number is a sensitive piece of information and should be handled as such. Cyber-criminals will use various methods to attempt to compromise credit card information that can then be used for fraudulent purposes.</p>
+
+<p>Through the use of regular expressions and CC number format validation, The tool was able to discover a credit card number located within the affected page.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Initially, the credit card number within the response should be checked to ensure its validity, as it is possible that the regular expression has matched on a similar number with no relation to a real credit card.</p>
+
+<p>If the response does contain a valid credit card number, then all efforts should be taken to remove or further protect this information. This can be achieved by removing the credit card number altogether, or by masking the number so that only the last few digits are present within the response. (eg. <em>**********123</em>).</p>
+
+<p>Additionally, credit card numbers should not be stored by the application, unless the organisation also complies with other security controls as outlined in the Payment Card Industry Data Security Standard (PCI- DSS).</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="https://gist.github.com/1182499">Luhn Ruby implementation</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://en.wikipedia.org/wiki/Luhn_algorithm">Wikipedia - Luhn algorithm</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://en.wikipedia.org/wiki/Bank_card_number">Wikipedia - Bank card number</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

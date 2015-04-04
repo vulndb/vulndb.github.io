@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/medium"><span class="label label-warning">medium</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/path"><span class="label label-primary">path</span></a>
+
+        
+        <a href="/tag/directory"><span class="label label-primary">directory</span></a>
+
+        
+        <a href="/tag/common"><span class="label label-primary">common</span></a>
+
+        
+        <a href="/tag/discovery"><span class="label label-primary">discovery</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Common directory <small>#9</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Web applications are often made up of multiple files and directories. It is possible that over time some directories may become unreferenced (unused) by the web application and forgotten about by the administrator/developer. Because web applications are built using common frameworks, they contain common directories that can be discovered (independent of server).</p>
+
+<p>During the initial recon stages of an attack, cyber-criminals will attempt to locate unreferenced directories in the hope that the directory will assist in further compromise of the web application. To achieve this they will make thousands of requests using word lists containing common names. The response headers from the server will then indicate if the directory exists.</p>
+
+<p>The tool also contains a list of common directory names which it will attempt to access.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>If directories are unreferenced then they should be removed from the web root and/or the application directory.</p>
+
+<p>Preventing access without authentication may also be an option and can stop a client from being able to view the contents of a file, however it is still likely that the directory structure will be able to be discovered.</p>
+
+<p>Using obscure directory names is implementing security through obscurity and is not a recommended option.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://cwe.mitre.org/data/definitions/538.html">CWE-538</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/Forced_browsing">OWASP - Forced browsing</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

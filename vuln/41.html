@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/medium"><span class="label label-warning">medium</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/response"><span class="label label-primary">response</span></a>
+
+        
+        <a href="/tag/splitting"><span class="label label-primary">splitting</span></a>
+
+        
+        <a href="/tag/injection"><span class="label label-primary">injection</span></a>
+
+        
+        <a href="/tag/header"><span class="label label-primary">header</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Response Splitting <small>#41</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>HTTP response splitting occurs when untrusted data is inserted into the response headers without any sanitisation.</p>
+
+<p>If successful, this allows cyber-criminals to essentially split the HTTP response in two. This is abused by cyber-criminals injecting CR (Carriage Return &ndash; <code>/r</code>) and LF (Line Feed &ndash; <code>
+</code>) characters which will then form the split. If the CR or LF characters are not processed by the server then it cannot be exploited.</p>
+
+<p>Along with these characters, cyber-criminals can then construct their own arbitrary response headers and body which would then form the second response. The second response is entirely under their control, allowing for a number of other attacks.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>It is recommended that untrusted data is never used to form the contents of the response header.</p>
+
+<p>Where any untrusted source is required to be used in the response headers, it is important to ensure that any hazardous characters (<code>/r</code>, <code>/n</code> and potentially others) are sanitised prior to being used.</p>
+
+<p>This is especially important when setting cookie values, redirecting, etc..</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://www.securiteam.com/securityreviews/5WP0E2KFGK.html">SecuriTeam</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/HTTP_Response_Splitting">OWASP</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

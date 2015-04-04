@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/high"><span class="label label-danger">high</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/session"><span class="label label-primary">session</span></a>
+
+        
+        <a href="/tag/cookie"><span class="label label-primary">cookie</span></a>
+
+        
+        <a href="/tag/injection"><span class="label label-primary">injection</span></a>
+
+        
+        <a href="/tag/fixation"><span class="label label-primary">fixation</span></a>
+
+        
+        <a href="/tag/hijacking"><span class="label label-primary">hijacking</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Session fixation <small>#43</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>HTTP by itself is a stateless protocol; therefore, the server is unable to determine which requests are performed by which client and which clients are authenticated or unauthenticated.</p>
+
+<p>The use of HTTP cookies within the headers allows a web server to identify each individual client and can thus determine which clients hold valid authentication from those that do not. These are known as session cookies or session tokens.</p>
+
+<p>To prevent clients from being able to guess each other&rsquo;s session token, each assigned session token should be entirely random and be different whenever a session is established with the server.</p>
+
+<p>Session fixation occurs when the client is able to specify their own session token value and the value of the session cookie is not changed by the server after successful authentication. Occasionally, the session token will also remain unchanged for the user independently of how many times they have authenticated. Cyber-criminals will abuse this functionality by sending crafted URL links with a predetermined session token within the link. The cyber-criminal will then wait for the victim to login and become authenticated. If successful, the cyber-criminal will know a valid session ID and therefore have access to the victim&rsquo;s session.</p>
+
+<p>The tool has discovered that it is able to set its own session token.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>The most important remediation action is to prevent the server from accepting client supplied data as session tokens.</p>
+
+<p>Additionally, the client&rsquo;s session token should be changed at specific key stages of the application flow, such as during authentication. This will ensure that even if clients are able to set their own cookie, it will not persist into an authenticated session.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://projects.webappsec.org/w/page/13246960/Session%20Fixation">WASC</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/Session_fixation">OWASP - Session fixation</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

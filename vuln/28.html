@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/low"><span class="label label-info">low</span></a>
+        
+    </div>
+</div>
+
+<h2>Insecure cross-domain policy (allow-http-request-headers-from) <small>#28</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>The browser security model normally prevents web content from one domain from accessing data from another domain. This is commonly known as the &ldquo;same origin policy&rdquo;.</p>
+
+<p>URL policy files grant cross-domain permissions for reading data. They permit operations that are not permitted by default. The URL policy file for Silverlight is located, by default, in the root directory of the target server, with the name <code>crossdomain.xml</code> (for example, at <code>www.example.com/crossdomain.xml</code>). When a domain is specified in <code>crossdomain.xml</code>, the site declares that it is willing to allow the operators of any servers in that domain to obtain any document on the server where the policy file resides.</p>
+
+<p>The <code>crossdomain.xml</code> file deployed on this website opens the server to all domains (use of a single asterisk &ldquo;*&rdquo; as a pure wildcard is supported).</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Carefully evaluate which sites will be allowed to make cross-domain calls.</p>
+
+<p>Consider network topology and any authentication mechanisms that will be affected by the configuration or implementation of the cross-domain policy.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://blogs.adobe.com/stateofsecurity/2007/07/crossdomain_policy_files_1.html">Adobe</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/Test_Cross_Origin_Resource_Sharing_%28OTG-CLIENT-007%29">OWASP</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

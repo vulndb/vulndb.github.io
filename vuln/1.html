@@ -1,1 +1,110 @@
-vuln 1
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/informational"><span class="label label-default">informational</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/http"><span class="label label-primary">http</span></a>
+
+        
+        <a href="/tag/methods"><span class="label label-primary">methods</span></a>
+
+        
+        <a href="/tag/options"><span class="label label-primary">options</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Allowed HTTP methods <small>#1</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>There are a number of HTTP methods that can be used on a webserver (<code>OPTIONS</code>, <code>HEAD</code>, <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code> etc.). Each of these methods perform a different function and each have an associated level of risk when their use is permitted on the webserver.</p>
+
+<p>A client can use the <code>OPTIONS</code> method within a request to query a server to determine which methods are allowed.</p>
+
+<p>Cyber-criminals will almost always perform this simple test as it will give a very quick indication of any high-risk methods being permitted by the server. The tool discovered that several methods are supported by the server.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>It is recommended that a whitelisting approach be taken to explicitly permit the HTTP methods required by the application and block all others.</p>
+
+<p>Typically the only HTTP methods required for most applications are <code>GET</code> and <code>POST</code>. All other methods perform actions that are rarely required or perform actions that are inherently risky. These risky methods (such as <code>PUT</code>, <code>DELETE</code>, etc) should be protected by strict limitations, such as ensuring that the channel is secure (SSL/TLS enabled) and only authorised and trusted clients are permitted to use them.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://httpd.apache.org/docs/2.2/mod/core.html#limitexcept">Apache.org</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

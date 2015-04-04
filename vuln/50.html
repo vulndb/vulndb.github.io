@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/medium"><span class="label label-warning">medium</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/unvalidated"><span class="label label-primary">unvalidated</span></a>
+
+        
+        <a href="/tag/redirect"><span class="label label-primary">redirect</span></a>
+
+        
+        <a href="/tag/injection"><span class="label label-primary">injection</span></a>
+
+        
+        <a href="/tag/header"><span class="label label-primary">header</span></a>
+
+        
+        <a href="/tag/location"><span class="label label-primary">location</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Unvalidated redirect <small>#50</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Web applications occasionally use parameter values to store the address of the page to which the client will be redirected &ndash; for example: <code>yoursite.com/page.asp?redirect=www.yoursite.com/404.asp</code></p>
+
+<p>An unvalidated redirect occurs when the client is able to modify the affected parameter value in the request and thus control the location of the redirection. For example, the following URL <code>yoursite.com/page.asp?redirect=www.anothersite.com</code> will redirect to <code>www.anothersite.com</code>.</p>
+
+<p>Cyber-criminals will abuse these vulnerabilities in social engineering attacks to get users to unknowingly visit malicious web sites.</p>
+
+<p>The tool has discovered that the server does not validate the parameter value prior to redirecting the client to the injected value.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>The application should ensure that the supplied value for a redirect is permitted. This can be achieved by performing whitelisting on the parameter value.</p>
+
+<p>The whitelist should contain a list of pages or sites that the application is permitted to redirect users to. If the supplied value does not match any value in the whitelist then the server should redirect to a standard error page.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/Top_10_2010-A10-Unvalidated_Redirects_and_Forwards">OWASP Top 10 2010</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

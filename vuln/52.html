@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/informational"><span class="label label-default">informational</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/webdav"><span class="label label-primary">webdav</span></a>
+
+        
+        <a href="/tag/options"><span class="label label-primary">options</span></a>
+
+        
+        <a href="/tag/methods"><span class="label label-primary">methods</span></a>
+
+        
+        <a href="/tag/server"><span class="label label-primary">server</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>WebDAV <small>#52</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Web Distributed Authoring and Versioning (WebDAV) is a facility that enables basic file management (reading and writing) to a web server. It essentially allows the webserver to be mounted by the client as a traditional file system allowing users a very simplistic means to access it as they would any other medium or network share.</p>
+
+<p>If discovered, attackers will attempt to harvest information from the WebDAV enabled directories, or even upload malicious files that could then be used to compromise the server.</p>
+
+<p>The tool discovered that the affected page allows WebDAV access. This was discovered as the server allowed several specific methods that are specific to WebDAV (<code>PROPFIND</code>, <code>PROPPATCH</code>, etc.), however, further testing should be conducted on the WebDAV component specifically as the tool does support this feature.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Identification of the requirement to run a WebDAV server should be considered. If it is not required then it should be disabled. However, if it is required to meet the application functionality, then it should be protected by SSL/TLS as well as the implementation of a strong authentication mechanism.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://www.webdav.org/specs/rfc4918.html">WebDAV.org</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://en.wikipedia.org/wiki/WebDAV">Wikipedia</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

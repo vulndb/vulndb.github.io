@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/high"><span class="label label-danger">high</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/ldap"><span class="label label-primary">ldap</span></a>
+
+        
+        <a href="/tag/injection"><span class="label label-primary">injection</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>LDAP Injection <small>#30</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Lightweight Directory Access Protocol (LDAP) is used by web applications to access and maintain directory information services. One of the most common uses for LDAP is to provide a Single-Sign-On (SSO) service that will allow clients to authenticate with a web site without any interaction (assuming their credentials have been validated by the SSO provider).</p>
+
+<p>LDAP injection occurs when untrusted data is used by the web application to query the LDAP directory without prior sanitisation.</p>
+
+<p>This is a serious security risk, as it could allow cyber-criminals the ability to query, modify, or remove anything from the LDAP tree. It could also allow other advanced injection techniques that perform other more serious attacks.</p>
+
+<p>The tool was able to detect a page that is vulnerable to LDAP injection based on known error messages.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>It is recommended that untrusted data is never used to form a LDAP query.</p>
+
+<p>To validate data, the application should ensure that the supplied value contains only the characters that are required to perform the required action. For example, where a username is required, then no non-alphanumeric characters should be accepted.</p>
+
+<p>If this is not possible, special characters should be escaped so they are treated accordingly. The following characters should be escaped with a <code>\</code>:</p>
+
+<ul>
+<li><code>&amp;</code> * <code>!</code> * <code>|</code> * <code>=</code> * <code>&lt;</code> * <code>&gt;</code> * <code>,</code> * <code>+</code> * <code>-</code> * <code>&quot;</code> * <code>'</code> * <code>;</code></li>
+</ul>
+
+<p>Additional character filtering must be applied to:</p>
+
+<ul>
+<li><code>(</code> * <code>)</code> * <code>\</code> * <code>/</code> * <code>*</code> * <code>NULL</code></li>
+</ul>
+
+<p>These characters require ASCII escaping.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://projects.webappsec.org/w/page/13246947/LDAP-Injection">WASC</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/LDAP_injection">OWASP</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

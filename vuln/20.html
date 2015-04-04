@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/high"><span class="label label-danger">high</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/htaccess"><span class="label label-primary">htaccess</span></a>
+
+        
+        <a href="/tag/server"><span class="label label-primary">server</span></a>
+
+        
+        <a href="/tag/limit"><span class="label label-primary">limit</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Misconfiguration in LIMIT directive of .htaccess file <small>#20</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>There are a number of HTTP methods that can be used on a webserver (for example <code>OPTIONS</code>, <code>HEAD</code>, <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>etc.). Each of these methods perform a different function, and each has an associated level of risk when their use is permitted on the webserver. The <code>&lt;Limit&gt;</code> directive within Apache&rsquo;s <code>.htaccess</code> file allows administrators to define which of the methods they would like to block. However, as this is a blacklisting approach, it is inevitable that a server administrator may accidentally miss adding certain HTTP methods to be blocked, thus increasing the level of risk to the application and/or server.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>The preferred configuration is to prevent the use of unauthorised HTTP methods by utilising the <code>&lt;LimitExcept&gt;</code> directive.</p>
+
+<p>This directive uses a whitelisting approach to permit HTTP methods while blocking all others not listed in the directive, and will therefor block any method tampering attempts.</p>
+
+<p>Most commonly, the only HTTP methods required for most scenarios are <code>GET</code> and <code>POST</code>. An example of permitting these HTTP methods is: <code>&lt;LimitExcept POST GET&gt; require valid-user &lt;/LimitExcept&gt;</code></p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://httpd.apache.org/docs/2.2/mod/core.html#limit">Apache.org</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

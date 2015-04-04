@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/low"><span class="label label-info">low</span></a>
+        
+    </div>
+</div>
+
+<h2>Password field with auto-complete <small>#38</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>In typical form-based web applications, it is common practice for developers to allow <code>autocomplete</code> within the HTML form to improve the usability of the page. With <code>autocomplete</code> enabled (default), the browser is allowed to cache previously entered form values.</p>
+
+<p>For legitimate purposes, this allows the user to quickly re-enter the same data when completing the form multiple times.</p>
+
+<p>When <code>autocomplete</code> is enabled on either/both the username and password fields, this could allow a cyber-criminal with access to the victim&rsquo;s computer the ability to have the victim&rsquo;s credentials automatically entered as the cyber-criminal visits the affected page.</p>
+
+<p>The tool has discovered that the affected page contains a form containing a password field that has not disabled <code>autocomplete</code>.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>The <code>autocomplete</code> value can be configured in two different locations. The first and most secure location is to disable the <code>autocomplete</code> attribute on the <code>&lt;form&gt;</code> HTML tag. This will disable <code>autocomplete</code> for all inputs within that form. An example of disabling <code>autocomplete</code> within the form tag is <code>&lt;form autocomplete=off&gt;</code>.</p>
+
+<p>The second slightly less desirable option is to disable the <code>autocomplete</code> attribute for a specific <code>&lt;input&gt;</code> HTML tag. While this may be the less desired solution from a security perspective, it may be preferred method for usability reasons, depending on size of the form. An example of disabling the <code>autocomplete</code> attribute within a password input tag is <code>&lt;input type=password autocomplete=off&gt;</code>.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

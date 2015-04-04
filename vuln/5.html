@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/informational"><span class="label label-default">informational</span></a>
+        
+    </div>
+</div>
+
+<h2>CAPTCHA protected form <small>#5</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>To prevent the automated abuse of a page, applications can implement what is known as a CAPTCHA.</p>
+
+<p>These are used to ensure human interaction with the application and are often used on forms where the application conducts sensitive actions. These typically include user registration, or submitting emails via &ldquo;Contact Us&rdquo; pages etc. The tool has flagged this not as a vulnerability, but as a prompt for the penetration tester to conduct further manual testing on the CAPTCHA function, as The tool cannon audit CAPTCHA protected forms. Testing for insecurely implemented CAPTCHA is a manual process, and an insecurely implemented CAPTCHA could allow a cyber-criminal a means to abuse these sensitive actions.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Although no remediation may be required based on this finding alone, manual testing should ensure that:
+ 1. The server keeps track of CAPTCHA tokens in use and has the token terminated after its first use or after a period of time. Therefore preventing replay attacks.
+ 2. The CAPTCHA answer is not hidden in plain text within the response that is sent to the client.
+ 3. The CAPTCHA image should not be weak and easily solved.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

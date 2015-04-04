@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/high"><span class="label label-danger">high</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/code"><span class="label label-primary">code</span></a>
+
+        
+        <a href="/tag/injection"><span class="label label-primary">injection</span></a>
+
+        
+        <a href="/tag/blind"><span class="label label-primary">blind</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Code injection (timing attack) <small>#8</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>A modern web application will be reliant on several different programming languages.</p>
+
+<p>These languages can be broken up in two flavours. These are client-side languages (such as those that run in the browser &ndash; like JavaScript) and server-side languages (which are executed by the server &ndash; like ASP, PHP, JSP, etc.) to form the dynamic pages (client-side code) that are then sent to the client. Because all server-side code should be executed by the server, it should only ever come from a trusted source.</p>
+
+<p>Code injection occurs when the server takes untrusted code (ie. from the client) and executes it.</p>
+
+<p>Cyber-criminals will abuse this weakness to execute arbitrary code on the server, which could result in complete server compromise.</p>
+
+<p>By injecting server-side code that is known to take a specific amount of time to execute, the tool was able to detect time-based code injection. This indicates that proper input sanitisation is not occurring.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>It is recommended that untrusted input is never processed as server-side code.</p>
+
+<p>To validate input, the application should ensure that the supplied value contains only the data that are required to perform the relevant action.</p>
+
+<p>For example, where a username is required, then no non-alpha characters should not be accepted.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://docs.python.org/py3k/library/functions.html#eval">Python eval documentation</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://www.aspdev.org/asp/asp-eval-execute/">ASP eval documentation</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://en.wikipedia.org/wiki/Eval#Ruby">Ruby eval documentation</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://php.net/manual/en/function.eval.php">PHP eval documentation</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://perldoc.perl.org/functions/eval.html">Perl eval documentation</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

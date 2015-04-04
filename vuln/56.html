@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/high"><span class="label label-danger">high</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/xss"><span class="label label-primary">xss</span></a>
+
+        
+        <a href="/tag/dom"><span class="label label-primary">dom</span></a>
+
+        
+        <a href="/tag/injection"><span class="label label-primary">injection</span></a>
+
+        
+        <a href="/tag/script"><span class="label label-primary">script</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>DOM-based Cross-Site Scripting (XSS) <small>#56</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Client-side scripts are used extensively by modern web applications. They perform from simple functions (such as the formatting of text) up to full manipulation of client-side data and Operating System interaction.</p>
+
+<p>Unlike traditional Cross-Site Scripting (XSS), where the client is able to inject scripts into a request and have the server return the script to the client, DOM XSS does not require that a request be sent to the server and may be abused entirely within the loaded page.</p>
+
+<p>This occurs when elements of the DOM (known as the sources) are able to be manipulated to contain untrusted data, which the client-side scripts (known as the sinks) use or execute an unsafe way.</p>
+
+<p>The tool has discovered that by inserting an HTML element into the page&rsquo;s DOM inputs (sources), it was possible to then have the HTML element rendered as part of the page by the sink.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Client-side document rewriting, redirection, or other sensitive action, using untrusted data, should be avoided wherever possible, as these may not be inspected by server side filtering.</p>
+
+<p>To remedy DOM XSS vulnerabilities where these sensitive document actions must be used, it is essential to:
+ 1. Ensure any untrusted data is treated as text, as opposed to being interpreted as code or mark-up within the page.
+ 2. Escape untrusted data prior to being used within the page. Escaping methods will vary depending on where the untrusted data is being used. (See references for details.)
+ 3. Use <code>document.createElement</code>, <code>element.setAttribute</code>, <code>element.appendChild</code>, etc. to build dynamic interfaces as opposed to HTML rendering methods such as <code>document.write</code>, <code>document.writeIn</code>, <code>element.innerHTML</code>, or <code>element.outerHTML</code>etc.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet">OWASP - Prevention</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/DOM_Based_XSS">OWASP</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

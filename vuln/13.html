@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/high"><span class="label label-danger">high</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/csrf"><span class="label label-primary">csrf</span></a>
+
+        
+        <a href="/tag/form"><span class="label label-primary">form</span></a>
+
+        
+        <a href="/tag/token"><span class="label label-primary">token</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Cross-Site Request Forgery <small>#13</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>In the majority of today&rsquo;s web applications, clients are required to submit forms which can perform sensitive operations.</p>
+
+<p>An example of such a form being used would be when an administrator wishes to create a new user for the application.</p>
+
+<p>In the simplest version of the form, the administrator would fill-in:</p>
+
+<ul>
+<li>Name * Password * Role (level of access)</li>
+</ul>
+
+<p>Continuing with this example, Cross Site Request Forgery (CSRF) would occur when the administrator is tricked into clicking on a link, which if logged into the application, would automatically submit the form without any further interaction.</p>
+
+<p>Cyber-criminals will look for sites where sensitive functions are performed in this manner and then craft malicious requests that will be used against clients via a social engineering attack.</p>
+
+<p>There are 3 things that are required for a CSRF attack to occur:</p>
+
+<ol>
+<li>The form must perform some sort of sensitive action. 2. The victim (the administrator the example above) must have an active session. 3. Most importantly, all parameter values must be <strong>known</strong> or <strong>guessable</strong>.</li>
+</ol>
+
+<p>The tool discovered that all parameters within the form were known or predictable and therefore the form could be vulnerable to CSRF.</p>
+
+<p><em>Manual verification may be required to check whether the submission will then perform a sensitive action, such as reset a password, modify user profiles, post content on a forum, etc.</em></p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Based on the risk (determined by manual verification) of whether the form submission performs a sensitive action, the addition of anti-CSRF tokens may be required.</p>
+
+<p>These tokens can be configured in such a way that each session generates a new anti-CSRF token or such that each individual request requires a new token.</p>
+
+<p>It is important that the server track and maintain the status of each token (in order to reject requests accompanied by invalid ones) and therefore prevent cyber-criminals from knowing, guessing or reusing them.</p>
+
+<p><em>For examples of framework specific remediation options, please refer to the references.</em></p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://www.cgisecurity.com/csrf-faq.html">CGI Security</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">Wikipedia</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29">OWASP</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

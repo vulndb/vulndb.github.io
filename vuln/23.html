@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/high"><span class="label label-danger">high</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/http"><span class="label label-primary">http</span></a>
+
+        
+        <a href="/tag/methods"><span class="label label-primary">methods</span></a>
+
+        
+        <a href="/tag/put"><span class="label label-primary">put</span></a>
+
+        
+        <a href="/tag/server"><span class="label label-primary">server</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Publicly writable directory <small>#23</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>There are various methods in which a file (or files) may be uploaded to a webserver. One method that can be used is the HTTP <code>PUT</code> method. The <code>PUT</code> method is mainly used during development of applications and allows developers to upload (or put) files on the server within the web root.</p>
+
+<p>By nature of the design, the <code>PUT</code> method typically does not provide any filtering and therefore allows sever side executable code (PHP, ASP, etc) to be uploaded to the server.</p>
+
+<p>Cyber-criminals will search for servers supporting the <code>PUT</code> method with the intention of modifying existing pages, or uploading web shells to take control of the server.</p>
+
+<p>The tool has discovered that the affected path allows clients to use the <code>PUT</code> method. During this test, the tool has <code>PUT</code> a file on the server within the web root and successfully performed a <code>GET</code> request to its location and verified the contents.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>Where possible the HTTP <code>PUT</code> method should be globally disabled. This can typically be done with a simple configuration change on the server. The steps to disable the <code>PUT</code> method will differ depending on the type of server being used (IIS, Apache, etc.).</p>
+
+<p>For cases where the <code>PUT</code> method is required to meet application functionality, such as REST style web services, strict limitations should be implemented to ensure that only secure (SSL/TLS enabled) and authorised clients are permitted to use the <code>PUT</code> method.</p>
+
+<p>Additionally, the server&rsquo;s file system permissions should also enforce strict limitations.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">RFC-2616 document</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

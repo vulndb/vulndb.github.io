@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/medium"><span class="label label-warning">medium</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/rfd"><span class="label label-primary">rfd</span></a>
+
+        
+        <a href="/tag/reflected"><span class="label label-primary">reflected</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>Reflected File Download <small>#71</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>The reflected file download vulnerability is an application weakness which allows a cyber-criminal to perform advanced social engineering attacks where an arbitrary executable file is downloaded by the user from vulnerable site. The contents of the executable file are controlled by the attacker and are never uploaded to the vulnerable site.</p>
+
+<p>This vulnerability, like many other Web attacks, begins by sending a malicious link to a victim. Unlike other attacks the exploitation finishes outside of the browser context:</p>
+
+<ol>
+<li>The user follows a malicious link to a trusted web site</li>
+<li>An executable file is downloaded and saved on the user&rsquo;s machine. All security indicators show that the file is &lsquo;hosted&rsquo; on the trusted web site</li>
+<li>The user executes the file which contains shell commands that gain complete control over the computer.</li>
+</ol>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(10 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><ol>
+<li>Explicitly set the <code>filename</code> attribute in the Content-disposition HTTP response header.
+
+<ol>
+<li>Perform strict whitelist validation on user input before using it in the creation of HTTP response bodies</li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="https://www.trustwave.com/Resources/SpiderLabs-Blog/Reflected-File-Download---A-New-Web-Attack-Vector/">Reflected File Download - A New Web Attack Vector</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>

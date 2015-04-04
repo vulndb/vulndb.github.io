@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vulndb web user interface</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    
+    
+    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <a href="/"><h1>Vulndb web user interface</h1></a>
+        </div>
+
+        
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/severity/medium"><span class="label label-warning">medium</span></a>
+        
+        
+        <a href="/tag/web"><span class="label label-primary">web</span></a>
+
+        
+        <a href="/tag/xst"><span class="label label-primary">xst</span></a>
+
+        
+        <a href="/tag/methods"><span class="label label-primary">methods</span></a>
+
+        
+        <a href="/tag/trace"><span class="label label-primary">trace</span></a>
+
+        
+        <a href="/tag/server"><span class="label label-primary">server</span></a>
+
+        
+        
+    </div>
+</div>
+
+<h2>HTTP TRACE <small>#63</small></h2>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Description</h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>The <code>TRACE</code> HTTP method allows a client so send a request to the server, and have the same request then send back in the server&rsquo;s response. This allows the client to determine if the server is receiving the request as expected or if specific parts of the request are not arriving as expected. For example incorrect encoding or a load balancer has filtered or changed a value. On many default installations the <code>TRACE</code> method is still enabled.</p>
+
+<p>While not vulnerable by itself, it does provide a method for cyber-criminals to bypass the <code>HTTPOnly</code> cookie flag, and therefore could allow a XSS attack to successfully access a session token.</p>
+
+<p>The tool has discovered that the affected page permits the HTTP <code>TRACE</code> method.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-8"><h3>Fix guidance <small>(50 minutes)</small></h3></div>
+</div>
+<div class="row">
+    <div class="col-md-8 text-justify"><p>The HTTP <code>TRACE</code> method is normally not required within production sites and should therefore be disabled.</p>
+
+<p>Depending on the function being performed by the web application, the risk level can start low and increase as more functionality is implemented.</p>
+
+<p>The remediation is typically a very simple configuration change and in most cases will not have any negative impact on the server or application.</p>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8"><h3>References</h3></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8"><a href="http://capec.mitre.org/data/definitions/107.html">CAPEC</a> </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8"><a href="http://www.owasp.org/index.php/Cross_Site_Tracing">OWASP</a> </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>
